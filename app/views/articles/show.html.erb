@@ -1,18 +1,15 @@
-<p>
-	<strong>Title:</strong>
-	<%= @article.title %>
-</p>
+<div id="articles_show">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h1><%= @article.title %></h1>
+				<p><%= @article.body %></p>
+				<%= link_to 'Edit', edit_article_path(@article) %>
 
-<p>
-	<strong>Body:</strong>
-	<%= @article.body %>
-</p>
-
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'Home', articles_path %>
+				<%= render @article.comments %>
+				<h3>Add a comment:</h3>
+				<%= render 'comments/form' %>
+			</div>
+		</div>
+	</div>
+</div>
